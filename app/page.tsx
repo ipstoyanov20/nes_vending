@@ -1,44 +1,160 @@
+"use client";
 import Image from "next/image";
 import mahcine from "@/public/nes-machine.png";
+import vm1 from "@/public/vendingm1.png";
+import { useEffect, useState } from 'react';
+import { gsap } from "gsap";
+import SplitType from "split-type";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Home() {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleToggleMenu = () => {
+		setIsOpen(!isOpen);
+	};
+	useEffect(() => {
+		AOS.init();
+	}, []);
+  
   return (
 		<>
-			{/* navbar */}
-			<div className="navbar bg-base-100">
-				<button className="btn-circle text-sm sm:text-xl ml-2 sm:ml-5 sm:mr-0 mr-10">
-					<a href="/">
-						<img className="w-20 h-[50px] max-w-[max(100%,50px)]" src="icon.png" alt="logo" />
+			<div className="navbar fixed flex flex-row justify-between bg-background z-[120] bg-white">
+				<div className="flex-1">
+					<a href={`/`} className="btn-circle text-xl">
+						<Image src={`/icon.png`} width={50} height={50} alt={`Logo`} />
 					</a>
-				</button>
-				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-sm sm:text-xl ml-5">
-					<a className="" href="/">ЗА НАС</a>
-				</button>
-				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-sm sm:text-xl ml-5">
-					<a className="" href="/">УСЛУГИ</a>
-				</button>
-				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-sm sm:text-xl ml-5">
-					<a className="" href="/">КОНТАКТИ</a>
-				</button>
+				</div>
+				<div
+					className={`lg:hidden fixed block inset-0 bg-white backdrop-blur-sm bg-opacity-80 z-50 pt-10 transition-transform duration-1000 ${
+						isOpen ? "translate-x-0" : "translate-x-full"
+					}`}
+				>
+					<div className="bg-transparent rounded-lg p-5 flex">
+						<ul className="menu menu-vertical">
+							<li>
+								<a
+									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
+									onClick={handleToggleMenu}
+									href="#genres"
+								>
+									ЗА НАС
+								</a>
+							</li>
+							<li>
+								<a
+									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
+									onClick={handleToggleMenu}
+									href="#how"
+								>
+									КАК
+								</a>
+							</li>
+							<li>
+								<a
+									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
+									onClick={handleToggleMenu}
+									href="#order"
+								>
+									СВЪРЖЕТЕ СЕ
+								</a>
+							</li>
+						</ul>
+					</div>
+					<button
+						className="btn absolute top-2 right-2 btn-square btn-ghost bg-[#183D66]"
+						onClick={handleToggleMenu}
+					>
+						X
+					</button>
+				</div>
+				<div className="flex-none">
+					<button
+						className="btn btn-square btn-ghost bg-[#183D66] lg:hidden mt-0 -ml-[max(50%,calc(50px-50%))]"
+						onClick={handleToggleMenu}
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							className="h-6 w-6 transition-transform duration-300"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								stroke="currentColor"
+								d="M4 7h15M4 12h7m-4 6h8" // Changed the form of the lines
+							/>
+						</svg>
+					</button>
+					<ul className="menu menu-horizontal px-1 hidden lg:flex">
+						<li>
+							<a
+								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
+								href="#genres"
+							>
+								ЗА НАС
+							</a>
+						</li>
+						<li>
+							<a
+								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
+								href="#how"
+							>
+								КАК
+							</a>
+						</li>
+						<li>
+							<a
+								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
+								href="#order"
+							>
+								СВЪРЖЕТЕ СЕ
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<main className="flex min-h-screen w-screen flex-col items-center p-5 bg-base-100">
+
+			<main className="flex min-h-screen w-screen flex-col items-center pt-32 sm:pt-10 bg-base-100">
 				<div className="flex flex-row sm:gap-[20%] gap-0 w-screen items-center justify-center h-auto p-5">
-					<div className="sm:w-auto w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]">
-						<h1 className="text-8xl font-clash font-bold text-[#183D66]">
+					<div data-aos="fade-up" className="sm:w-auto mt-0 sm:mt-[15%] w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]">
+						<h1  className="text-7xl sm:text-8xl font-clash font-bold text-[#183D66]">
 							NES Vending
 						</h1>
 						<p className="text-4xl uppercase">
 							Вашето удоволствие <br />
 							на едно копче разстояние
 						</p>
-						<button className="uppercase text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66]">
+						<button className="uppercase text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
 							Свържи се
 						</button>
 					</div>
-					<Image
-						src={mahcine}
-						className="rounded-lg translate-y-[10%] -translate-x-32 z-[1] h-auto sm:block hidden"
-						alt="Vending Machine"
-					/>
+					<div className="relative w-full sm:w-auto  sm:translate-y-[30%] sm:-translate-x-32 sm:block hidden">
+						<Image
+							src={mahcine}
+							className="rounded-lg z-[1] h-auto "
+							alt="Vending Machine"
+						/>
+						<div className="absolute z-[20] rounded-md -top-[100px] -right-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
+							<Image
+							src={vm1}
+							className="scale-75"
+
+							alt="Vending Machine"
+							/>
+						</div>
+						<div className="absolute z-[20] rounded-md -bottom-[100px] -left-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
+							<Image
+							src={vm1}
+							className="scale-75"
+							alt="Vending Machine"
+							/>
+						</div>
+					</div>
 				</div>
 			</main>
 			{/* fotter */}

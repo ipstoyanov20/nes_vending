@@ -80,3 +80,21 @@ font-clash {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+  .menu li>*:not(ul, .menu-title, details, .btn):active,
+  .menu li>*:not(ul, .menu-title, details, .btn).active,
+  .menu li>details>summary:active {
+    --tw-bg-opacity: 1;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: black;
+  }
+
+  .menu li>*:not(ul, .menu-title, details, .dropdown):hover,
+  .menu li>*:not(ul, .menu-title, details, .dropdown).active,
+  .menu li>details>summary:hover {
+    --tw-bg-opacity: 1;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: #183D66 !important;
+  }
