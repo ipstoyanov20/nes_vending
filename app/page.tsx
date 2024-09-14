@@ -4,25 +4,25 @@ export default function Home() {
   return (
 		<>
 			{/* navbar */}
-			<div className="navbar bg-base-100 ">
-				<button className="btn-circle text-xl ml-5">
+			<div className="navbar bg-base-100">
+				<button className="btn-circle text-sm sm:text-xl ml-2 sm:ml-5 sm:mr-0 mr-10">
 					<a href="/">
-						<img src="icon.png" alt="logo" />
+						<img className="w-20 h-[50px] max-w-[max(100%,50px)]" src="icon.png" alt="logo" />
 					</a>
 				</button>
-				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-xl ml-5">
+				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-sm sm:text-xl ml-5">
 					<a className="" href="/">ЗА НАС</a>
 				</button>
-				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-xl ml-5">
+				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-sm sm:text-xl ml-5">
 					<a className="" href="/">УСЛУГИ</a>
 				</button>
-				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-xl ml-5">
+				<button className="btn relative nav-link text-[#183D66] hover:bg-transparent btn-ghost text-sm sm:text-xl ml-5">
 					<a className="" href="/">КОНТАКТИ</a>
 				</button>
 			</div>
-			<main className="flex min-h-screen flex-col items-center p-0 bg-base-100">
-				<div className="flex flex-row gap-[20%] w-screen items-center justify-center h-auto p-5">
-					<div className="w-100% z-[2] flex flex-col gap-4 items-start text-[#183D66]">
+			<main className="flex min-h-screen w-screen flex-col items-center p-5 bg-base-100">
+				<div className="flex flex-row sm:gap-[20%] gap-0 w-screen items-center justify-center h-auto p-5">
+					<div className="sm:w-auto w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]">
 						<h1 className="text-8xl font-clash font-bold text-[#183D66]">
 							NES Vending
 						</h1>
@@ -36,7 +36,7 @@ export default function Home() {
 					</div>
 					<Image
 						src={mahcine}
-						className="rounded-lg w-100% translate-y-[10%] -translate-x-32 z-[1] h-auto"
+						className="rounded-lg translate-y-[10%] -translate-x-32 z-[1] h-auto sm:block hidden"
 						alt="Vending Machine"
 					/>
 				</div>
