@@ -175,8 +175,8 @@ export default function Home() {
 
 			<main className="flex min-h-screen w-screen flex-col items-center pt-32 sm:pt-10 bg-base-100">
 				{/* hero section */}
-				<div className="flex flex-row sm:gap-[20%] gap-0 w-screen items-center justify-center h-auto p-5">
-					<div className="relative w-full sm:w-auto  sm:translate-y-[20%] sm:-translate-x-32 sm:block hidden">
+				<div className="flex flex-row sm:gap-[20%] gap-0 w-screen items-center justify-center h-auto sm:h-screen p-5">
+					<div className="relative w-full sm:w-auto sm:block hidden">
 						<Image
 							src={mahcine}
 							className="rounded-lg z-[1] h-auto "
@@ -203,7 +203,7 @@ export default function Home() {
 					</div>
 					<div
 						data-aos="fade-up"
-						className="sm:w-auto mt-0 sm:mt-[10%] w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]"
+						className="sm:w-auto w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]"
 					>
 						<p className="text-xl uppercase">
 							Вашето удоволствие <br />
@@ -225,7 +225,7 @@ export default function Home() {
 					</div>
 				</div>
 				{/* service section */}
-				<section data-aos="fade-up" className="w-screen mt-20 sm:mt-0 h-auto sm:h-screen bg-base-100 flex flex-col gap-10 items-start sm:items-center justify-center p-5">
+				<section data-aos="fade-up" className="w-screen mt-20 sm:mt-0 h-auto sm:h-screen bg-base-100 flex flex-col gap-10 items-start sm:items-center justify-start p-5">
 					<h2 ref={aboutusRef} className="text-5xl overflow-hidden sm:text-8xl uppercase font-clash font-bold text-[#183D66]">За Нас</h2>
 					<div className="flex flex-col sm:flex-row gap-10 items-center justify-center">
 						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
