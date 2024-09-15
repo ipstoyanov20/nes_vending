@@ -19,12 +19,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   overflow-x: hidden;
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -52,8 +49,8 @@ font-clash {
   transform: scaleX(0);
   width: 100%;
   height: 2px;
-  background-color:#183D66;
-  transition: transform 0.5s cubic-bezier(.215,.61,.355,1);
+  background-color: #183D66;
+  transition: transform 0.5s cubic-bezier(.215, .61, .355, 1);
   transform-origin: right;
 }
 
@@ -67,11 +64,11 @@ font-clash {
   position: absolute;
   top: 0%;
   left: 0;
-  transform: scaleX(0);
   width: 100%;
   height: 100%;
-  background-color:#183D66;
-  transition: transform 0.5s cubic-bezier(.215,.61,.355,1);
+  background-color: #183D66;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(.215, .61, .355, 1);
   transform-origin: right;
   z-index: -1;
 }
@@ -81,20 +78,20 @@ font-clash {
   transform-origin: left;
 }
 
-  .menu li>*:not(ul, .menu-title, details, .btn):active,
-  .menu li>*:not(ul, .menu-title, details, .btn).active,
-  .menu li>details>summary:active {
-    --tw-bg-opacity: 1;
-    background-color: transparent;
-    --tw-text-opacity: 1;
-    color: black;
-  }
+.menu li>*:not(ul, .menu-title, details, .btn):active,
+.menu li>*:not(ul, .menu-title, details, .btn).active,
+.menu li>details>summary:active {
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: black;
+}
 
-  .menu li>*:not(ul, .menu-title, details, .dropdown):hover,
-  .menu li>*:not(ul, .menu-title, details, .dropdown).active,
-  .menu li>details>summary:hover {
-    --tw-bg-opacity: 1;
-    background-color: transparent;
-    --tw-text-opacity: 1;
-    color: #183D66 !important;
-  }
+.menu li>*:not(ul, .menu-title, details, .dropdown):hover,
+.menu li>*:not(ul, .menu-title, details, .dropdown).active,
+.menu li>details>summary:hover {
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: #183D66 !important;
+}

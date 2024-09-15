@@ -2,20 +2,74 @@
 import Image from "next/image";
 import mahcine from "@/public/nes-machine.png";
 import vm1 from "@/public/vendingm1.png";
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from "gsap";
 import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleToggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
+	const titleRef = useRef(null);
+	const aboutusRef = useRef(null);
+	const vend1Ref = useRef(null);
+	const vend2Ref = useRef(null);
 	useEffect(() => {
 		AOS.init();
+		titleRef.current ? new SplitType(titleRef.current) : null;
+		aboutusRef.current ? new SplitType(aboutusRef.current) : null;
+		let titleChars = document.querySelectorAll("h1 .char");
+		let aboutChars = document.querySelectorAll("h2 .char");
+
+		for (let i = 0; i < titleChars.length; i++) {
+			titleChars[i].classList.add("translate-y-[300%]");
+		}
+		for (let i = 0; i < aboutChars.length; i++) {
+			aboutChars[i].classList.add("translate-y-[300%]");
+		}
+		
+		gsap.to(titleChars, {
+			y: 0,
+			stagger: 0.05,
+			duration: 0.6,
+			opacity: 1,
+			delay: 0,
+			
+		});
+		gsap.to(aboutChars, {
+			y: 0,
+			stagger: 0.05,
+			duration: 0.6,
+			opacity: 1,
+			delay: 0.5,
+			scrollTrigger: {
+				trigger: aboutusRef.current, // Element that triggers the animation
+				start: "top 80%", // Start animation when top of element is 80% from the top of the viewport
+				toggleActions: "play none none none", // Play animation on scroll in
+			  },
+		});
+		gsap.to(vend1Ref.current, {
+			y: 0,
+			stagger: 0.05,
+			duration: 0.6,
+			opacity: 1,
+			delay: 1,
+			transform: "scale(0.8)",
+		});
+		gsap.to(vend2Ref.current, {
+			y: 0,
+			stagger: 0.05,
+			duration: 0.6,
+			opacity: 1,
+			delay: 0.5,
+			transform: "scale(1)",
+		});
 	}, []);
   
   return (
@@ -120,42 +174,80 @@ export default function Home() {
 			</div>
 
 			<main className="flex min-h-screen w-screen flex-col items-center pt-32 sm:pt-10 bg-base-100">
+				{/* hero section */}
 				<div className="flex flex-row sm:gap-[20%] gap-0 w-screen items-center justify-center h-auto p-5">
-					<div data-aos="fade-up" className="sm:w-auto mt-0 sm:mt-[15%] w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]">
-						<h1  className="text-7xl sm:text-8xl font-clash font-bold text-[#183D66]">
-							NES Vending
-						</h1>
-						<p className="text-4xl uppercase">
-							Вашето удоволствие <br />
-							на едно копче разстояние
-						</p>
-						<button className="uppercase text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
-							Свържи се
-						</button>
-					</div>
-					<div className="relative w-full sm:w-auto  sm:translate-y-[30%] sm:-translate-x-32 sm:block hidden">
+					<div className="relative w-full sm:w-auto  sm:translate-y-[20%] sm:-translate-x-32 sm:block hidden">
 						<Image
 							src={mahcine}
 							className="rounded-lg z-[1] h-auto "
 							alt="Vending Machine"
 						/>
-						<div className="absolute z-[20] rounded-md -top-[100px] -right-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
+						<div className="animate-blob absolute z-[20] rounded-md -top-[100px] p-5 -right-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
 							<Image
-							src={vm1}
-							className="scale-75"
-
-							alt="Vending Machine"
+								src={vm1}
+								width={200}
+								height={500}
+								className="scale-0"
+								ref={vend1Ref}
+								alt="Vending Machine"
 							/>
 						</div>
-						<div className="absolute z-[20] rounded-md -bottom-[100px] -left-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
+						{/* <div className="absolute z-[20] rounded-md -bottom-[100px] p-5 -left-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
 							<Image
-							src={vm1}
-							className="scale-75"
-							alt="Vending Machine"
+								src={vm1}
+								className="scale-0"
+								alt="Vending Machine"
+								ref={vend2Ref}
 							/>
-						</div>
+						</div> */}
+					</div>
+					<div
+						data-aos="fade-up"
+						className="sm:w-auto mt-0 sm:mt-[10%] w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]"
+					>
+						<p className="text-xl uppercase">
+							Вашето удоволствие <br />
+							на едно копче разстояниe
+						</p>
+						<h1 className="text-7xl sm:text-8xl font-clash font-bold text-[#183D66]">
+							<p className="overflow-hidden" ref={titleRef}>
+								NES
+							</p>
+							<p>Vending</p>
+						</h1>
+						<p className="text-md italic text-wrap w-full"> Перфектни за
+							офиси, училища и обществени пространства, <br /> NES Vending съчетава
+							съвременна технология с надеждност.
+						</p>
+						<button className="uppercase text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
+							Свържи се
+						</button>
 					</div>
 				</div>
+				{/* service section */}
+				<section data-aos="fade-up" className="w-screen mt-20 sm:mt-0 h-auto sm:h-screen bg-base-100 flex flex-col gap-10 items-start sm:items-center justify-center p-5">
+					<h2 ref={aboutusRef} className="text-5xl overflow-hidden sm:text-8xl uppercase font-clash font-bold text-[#183D66]">За Нас</h2>
+					<div className="flex flex-col sm:flex-row gap-10 items-center justify-center">
+						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
+							<h3 className="text-2xl text-white">Качество</h3>
+							<p className="text-white">
+								Всички наши продукти са произведени от висококачествени материали
+							</p>
+						</div>
+						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
+							<h3 className="text-2xl text-white">Удобство</h3>
+							<p className="text-white">
+								Специално проектирани за лесно и бързо обслужване
+							</p>
+						</div>
+						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
+							<h3 className="text-2xl text-white">Надеждност</h3>
+							<p className="text-white">
+								Нашите продукти са изпитани и тествани за максимална надеждност
+							</p>
+						</div>
+					</div>
+				</section>
 			</main>
 			{/* fotter */}
 			<footer className="footer h-auto w-screen bg-base-100 text-[#183D66] p-10">
