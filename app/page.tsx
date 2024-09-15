@@ -60,7 +60,7 @@ export default function Home() {
 			duration: 0.6,
 			opacity: 1,
 			delay: 1,
-			transform: "scale(0.8)",
+			transform: "scale(0.5)",
 		});
 		gsap.to(vend2Ref.current, {
 			y: 0,
@@ -179,16 +179,14 @@ export default function Home() {
 					<div className="relative w-full sm:w-auto sm:block hidden">
 						<Image
 							src={mahcine}
-							className="rounded-lg z-[1] h-auto "
+							className="rounded-lg z-[1] h-auto"
 							alt="Vending Machine"
 						/>
 						<div className="animate-blob absolute z-[20] rounded-md -top-[100px] p-5 -right-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
 							<Image
 								src={vm1}
-								width={200}
-								height={500}
-								className="scale-0"
-								ref={vend1Ref}
+								className="scale-0 top-[-50%] left-0 absolute"
+								ref={vend1Ref} 	
 								alt="Vending Machine"
 							/>
 						</div>
