@@ -176,7 +176,7 @@ export default function Home() {
 			<main className="flex min-h-screen w-screen flex-col items-center pt-32 sm:pt-10 bg-base-100">
 				{/* hero section */}
 				<div className="flex flex-row sm:gap-[20%] gap-0 w-screen items-center justify-center h-auto sm:h-screen p-5">
-					<div className="relative w-full sm:w-auto sm:block hidden">
+					<div className="relative w-full sm:w-auto lg:max-2xl:translate-y-3 lg:max-2xl:scale-[70%] sm:block hidden">
 						<Image
 							src={mahcine}
 							className="rounded-lg z-[1] h-auto"
