@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ServicesSection from "@/components/services";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
@@ -223,29 +224,7 @@ export default function Home() {
 					</div>
 				</div>
 				{/* service section */}
-				<section data-aos="fade-up" className="w-screen mt-20 sm:mt-0 h-auto sm:h-screen bg-base-100 flex flex-col gap-10 items-start sm:items-center justify-start p-5">
-					<h2 ref={aboutusRef} className="text-5xl overflow-hidden sm:text-8xl uppercase font-clash font-bold text-[#183D66]">За Нас</h2>
-					<div className="flex flex-col sm:flex-row gap-10 items-center justify-center">
-						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
-							<h3 className="text-2xl text-white">Качество</h3>
-							<p className="text-white">
-								Всички наши продукти са произведени от висококачествени материали
-							</p>
-						</div>
-						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
-							<h3 className="text-2xl text-white">Удобство</h3>
-							<p className="text-white">
-								Специално проектирани за лесно и бързо обслужване
-							</p>
-						</div>
-						<div data-aos="fade-up" className="w-[300px] h-[300px] bg-[#183D66] rounded-lg p-5">
-							<h3 className="text-2xl text-white">Надеждност</h3>
-							<p className="text-white">
-								Нашите продукти са изпитани и тествани за максимална надеждност
-							</p>
-						</div>
-					</div>
-				</section>
+				<ServicesSection/>
 			</main>
 			{/* fotter */}
 			<footer className="footer h-auto w-screen bg-base-100 text-[#183D66] p-10">
