@@ -8,6 +8,7 @@ import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ServicesSection from "@/components/services";
+import SuccessStories from "@/components/bento-first";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
@@ -225,6 +226,7 @@ export default function Home() {
 				</div>
 				{/* service section */}
 				<ServicesSection/>
+				<SuccessStories/>
 			</main>
 			{/* fotter */}
 			<footer className="footer h-auto w-screen bg-base-100 text-[#183D66] p-10">

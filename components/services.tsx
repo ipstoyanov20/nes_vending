@@ -1,55 +1,76 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import cn from "classnames"; // Importing the classnames utility
+
 export default function ServicesSection() {
-  useEffect(() => {
-    AOS.init()
-  })
-  const [activeBlock, setActiveBlock] = useState<string | null>(null);
+  const sectionP = useRef(null);
+	useEffect(() => {
+		AOS.init();
+    gsap.to(sectionP.current, {
+      duration: 0.5,
+      ease: "power4.out",
+      opacity: 1,
+      y: 0,
+    });
+	});
 
-  const blocks = [
-    {
-      id: "strategy",
-      title: "Стратегия",
-      content: `We're your strategic partner, deeply understanding your brand's essence with a dedicated product owner for each project, crafting personalized, data-informed strategies that put you ahead of the competition.`,
-    },
-    {
-      id: "creative",
-      title: "Креативност",
-      content: `Our creativity drives innovative solutions, transforming ideas into compelling experiences that resonate with your target audience.`,
-    },
-  ];
+	const [activeBlock, setActiveBlock] = useState<string | null>(null);
 
-  return (
-    <section className="w-screen h-auto bg-black p-10">
-      <h1 className="text-5xl text-center m-7 p-5 text-white font-bold mb-20">
-        Нашите услуги
-      </h1>
-      <div className="flex flex-col gap-y-5 items-center justify-center text-black w-full">
-        {blocks.map((block) => (
-          <div
-            key={block.id}
-            onClick={() => setActiveBlock(block.id)}
-            data-active={activeBlock === block.id}
-            className={`group grid grid-cols-2 transition-all duration-1000 w-full p-5 rounded-xl cursor-pointer ${activeBlock === block.id
-                ? "bg-white text-black text-2xl"
-                : "bg-[#1a1a1a] text-white h-fit text-3xl"
-              }`}
-          >
-            <h2 className="text-3xl font-bold px-5">{block.title}</h2>
-            {activeBlock === block.id && (
-              <div className="px-5 py-3 overflow-hidden" data-aos="fade-up">
-                <p className="mb-4">{block.content}</p>
-                <button className="btn-primary rounded-2xl px-5 py-2 bg-black text-white">
-                  Read more
-                </button>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+	const blocks = [
+		{
+			id: "strategy",
+			title: "Стратегия",
+			content: `We're your strategic partner, deeply understanding your brand's essence with a dedicated product owner for each project, crafting personalized, data-informed strategies that put you ahead of the competition.`,
+		},
+		{
+			id: "creative",
+			title: "Креативност",
+			content: `Our creativity drives innovative solutions, transforming ideas into compelling experiences that resonate with your target audience.`,
+		},
+	];
+
+	return (
+		<section className="w-screen h-auto bg-black p-10">
+			<h1 className="text-5xl text-center m-7 p-5 text-white font-bold mb-20">
+				Нашите услуги
+			</h1>
+			<div className="flex flex-col gap-y-5 items-center justify-center text-black w-full">
+				{blocks.map((block) => (
+					<div
+						key={block.id}
+						onClick={() => setActiveBlock(block.id)}
+						data-active={activeBlock === block.id}
+						className={cn(
+							"group grid grid-cols-2 transition-all duration-500 w-full p-5 rounded-xl cursor-pointer",
+							{
+								"bg-white text-black text-2xl":
+									activeBlock === block.id ,
+								"bg-[#1a1a1a] text-white text-2xl": activeBlock !== block.id,
+							},
+						)}
+					>
+						<h2
+							className={cn("font-bold transition-all duration-500", {
+								"text-5xl text-black mb-20": activeBlock === block.id, // Larger text size when active
+								"text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
+							})}
+						>
+							{block.title}
+						</h2>
+						{activeBlock === block.id && (
+							<div className="px-5 py-3 overflow-hidden">
+								<p className="mb-4 translate-y-10" ref={sectionP} >{block.content}</p>
+								<button className="btn-primary rounded-2xl px-5 py-2 bg-black text-white">
+									Read more
+								</button>
+							</div>
+						)}
+					</div>
+				))}
+			</div>
+		</section>
+	);
 }
