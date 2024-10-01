@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 
-const SwitchContainer = ({ children, onClick }) => {
+const SwitchContainer = ({ isChecked, children, onClick } : { isChecked:any, children: any, onClick:any }) => {
   return (
     <div
+        className='mt-20'
       style={{
         position: 'relative',
         display: 'inline-block',
-        width: 60,
+        width: 65,
         height: 34,
-        backgroundColor: '#ccc',
+        backgroundColor: isChecked ? '#0bc148' : '#de0015',
         borderRadius: 34,
-        transform: 'scale(6)',
+        transform: 'scale(5)',
         transition: 'background-color 0.3s ease-in-out',
         cursor: 'pointer', // Make the entire container clickable
       }}
@@ -21,39 +22,42 @@ const SwitchContainer = ({ children, onClick }) => {
   );
 };
 
-const SwitchButton = ({ isChecked }) => {
+const SwitchButton = ({ isChecked } : {isChecked:any}) => {
   return (
     <div
       style={{
         position: 'absolute',
         top: 2,
-        left: isChecked ? '27px' : '3px',
+        left: isChecked ? '50%' : '4%',
         width: 30,
         height: 30,
         transform: 'scale(1)',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: 34,
-        transition: 'left 0.3s ease-in-out',
-      }}
+        transition: 'left 0.2s ease-in-out',
+    }}
     />
-  );
+    );
 };
 
-const SwitchLabel = () => {
-  return (
-    <label
-      style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        fontSize: 14,
-        color: '#fff',
-        pointerEvents: 'none',
-      }}
+const SwitchLabel = ({ isChecked }: { isChecked:any}) => {
+    return (
+        <label
+        className='font-bold'
+        style={{
+            position: 'absolute',
+            top: '50%',
+            left: isChecked ? '25%' : '75%',
+            transform: 'translate(-50%, -50%)',
+            fontSize: 12,
+            color:'white',
+            opacity:isChecked ? '1' : '0.5',
+            pointerEvents: 'none',
+            transition: 'left 0.2s ease-in-out',
+        }}
     >
-      Yes
-    </label>
+      Да 
+         </label>
   );
 };
 
@@ -65,9 +69,9 @@ const HoverSwitch = () => {
   };
 
   return (
-    <SwitchContainer onClick={handleToggle}>
+    <SwitchContainer isChecked={isChecked} onClick={handleToggle}>
       <SwitchButton isChecked={isChecked} />
-      <SwitchLabel />
+      <SwitchLabel isChecked={isChecked} />
     </SwitchContainer>
   );
 };

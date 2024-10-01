@@ -34,7 +34,7 @@ export default function ServicesSection() {
 
 	return (
 		<section className="w-screen h-auto bg-[#1E3E62] p-10">
-			<h1 className="text-5xl text-center m-7 p-5 text-white font-bold mb-20">
+			<h1 className="text-5xl text-center m-0 p-5 text-white font-bold mb-10">
 				Нашите услуги
 			</h1>
 			<div className="flex flex-col gap-y-5 items-center justify-center text-black w-full">
