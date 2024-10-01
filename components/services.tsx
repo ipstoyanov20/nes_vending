@@ -23,18 +23,18 @@ export default function ServicesSection() {
 		{
 			id: "strategy",
 			title: "Стратегия",
-			content: `We're your strategic partner, deeply understanding your brand's essence with a dedicated product owner for each project, crafting personalized, data-informed strategies that put you ahead of the competition.`,
+			content: `Графичните и типографските оператори знаят това добре, в действителност всички професии, занимаващи се с комуникационната вселена, имат стабилна връзка с тези думи, но какво е това?`,
 		},
 		{
 			id: "creative",
 			title: "Креативност",
-			content: `Our creativity drives innovative solutions, transforming ideas into compelling experiences that resonate with your target audience.`,
+			content: `Графичните и типографските оператори знаят това добре, в действителност всички професии, занимаващи се с комуникационната вселена, имат стабилна връзка с тези думи, но какво е това?`,
 		},
 	];
 
 	return (
 		<section className="w-screen h-auto bg-[#1E3E62] p-10">
-			<h1 className="text-5xl text-center m-0 p-5 text-white font-bold mb-10">
+			<h1 className="text-5xl text-center m-0 p-5 text-white font-bold font-nuni mb-10">
 				Нашите услуги
 			</h1>
 			<div className="flex flex-col gap-y-5 items-center justify-center text-black w-full">
@@ -53,7 +53,7 @@ export default function ServicesSection() {
 						)}
 					>
 						<h2
-							className={cn("font-bold transition-all duration-300", {
+							className={cn("font-bold font-nuni transition-all duration-300", {
 								"text-5xl text-black mb-20": activeBlock === block.id, // Larger text size when active
 								"text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
 							})}
@@ -62,8 +62,8 @@ export default function ServicesSection() {
 						</h2>
 						{activeBlock === block.id && (
 							<div className="px-5 py-3 overflow-hidden">
-								<p className="mb-4 translate-y-10" ref={sectionP} >{block.content}</p>
-								<button className="btn-primary bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
+								<p className="mb-4 font-nuni translate-y-10" ref={sectionP} >{block.content}</p>
+								<button className="btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
 									Read more
 								</button>
 							</div>

@@ -206,7 +206,7 @@ export default function Home() {
 						data-aos="fade-up"
 						className="sm:w-auto w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]"
 					>
-						<p className="text-xl uppercase">
+						<p className="text-xl uppercase font-nuni">
 							Вашето удоволствие <br />
 							на едно копче разстояниe
 						</p>
@@ -216,11 +216,11 @@ export default function Home() {
 							</p>
 							<p>Vending</p>
 						</h1>
-						<p className="text-md italic text-wrap w-full"> Перфектни за
+						<p className="text-md font-nuni italic text-wrap w-full"> Перфектни за
 							офиси, училища и обществени пространства, <br /> NES Vending съчетава
 							съвременна технология с надеждност.
 						</p>
-						<button className="uppercase text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
+						<button className="uppercase font-nuni text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
 							Свържи се
 						</button>
 					</div>

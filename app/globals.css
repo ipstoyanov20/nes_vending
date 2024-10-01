@@ -41,6 +41,17 @@ body {
 .font-clash {
   font-family: 'Clash';
 }
+@font-face {
+  font-family: 'Nunito';
+  src: url(/fonts/nunito.ttf);
+  font-weight: 700px;
+  font-size: 160px;
+  font-style: italic;
+}
+
+.font-nuni {
+  font-family: 'Nunito';
+}
 
 .nav-link::before {
   content: '';

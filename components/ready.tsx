@@ -2,10 +2,9 @@ import React from 'react'
 import HoverSwitch from './hover-switch'
 function Ready() {
   return (
-    <section className='realtive w-screen h-screen bg-black'>
+    <section className='realtive w-screen h-screen bg-[#0b182b]'>
         <div className='grid place-items-center '>
-            <h1 className='text-9xl font-bold font-clash text-center mt-5 p-10'>Ready to build
-the next?</h1>
+            <h1 className='text-8xl font-bold font-nuni text-center mt-5 p-10'>Готови да започнем следващото приключение?</h1>
         <HoverSwitch/>
         </div>
     </section>
