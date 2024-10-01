@@ -44,7 +44,7 @@ export default function ServicesSection() {
 						onClick={() => setActiveBlock(block.id)}
 						data-active={activeBlock === block.id}
 						className={cn(
-							"group grid grid-cols-2 transition-all duration-300 w-full p-5 rounded-xl cursor-pointer",
+							"group flex flex-col sm:flex-row transition-all duration-300 w-full p-5 rounded-xl cursor-pointer",
 							{
 								"bg-white text-[#0b182b] text-xl":
 									activeBlock === block.id ,
@@ -53,8 +53,8 @@ export default function ServicesSection() {
 						)}
 					>
 						<h2
-							className={cn("font-bold font-nuni transition-all duration-300", {
-								"text-5xl text-black mb-20": activeBlock === block.id, // Larger text size when active
+							className={cn("font-bold px-5 font-nuni transition-all duration-300", {
+								"text-5xl text-black mb-5 sm:mb-20": activeBlock === block.id, // Larger text size when active
 								"text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
 							})}
 						>
