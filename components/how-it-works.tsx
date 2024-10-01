@@ -33,7 +33,7 @@ const SuccessStories = () => {
     <section className="flex flex-col md:flex-row items-center justify-between p-8 bg-white">
       {/* Left section */}
       <div className="flex flex-col space-y-6 md:w-1/2">
-        <h1 className="text-4xl font-bold leading-tight">
+        <h1 className="text-4xl text-[#0b182b] font-bold leading-tight">
           Partner in success stories
         </h1>
         <button className="px-4 py-2 bg-gray-300 rounded-full text-gray-700 font-medium w-fit">

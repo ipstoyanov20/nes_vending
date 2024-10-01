@@ -33,7 +33,7 @@ export default function ServicesSection() {
 	];
 
 	return (
-		<section className="w-screen h-auto bg-black p-10">
+		<section className="w-screen h-auto bg-[#1E3E62] p-10">
 			<h1 className="text-5xl text-center m-7 p-5 text-white font-bold mb-20">
 				Нашите услуги
 			</h1>
@@ -44,16 +44,16 @@ export default function ServicesSection() {
 						onClick={() => setActiveBlock(block.id)}
 						data-active={activeBlock === block.id}
 						className={cn(
-							"group grid grid-cols-2 transition-all duration-500 w-full p-5 rounded-xl cursor-pointer",
+							"group grid grid-cols-2 transition-all duration-300 w-full p-5 rounded-xl cursor-pointer",
 							{
-								"bg-white text-black text-2xl":
+								"bg-white text-[#0b182b] text-xl":
 									activeBlock === block.id ,
-								"bg-[#1a1a1a] text-white text-2xl": activeBlock !== block.id,
+								"bg-[#0B192C] text-white text-xl": activeBlock !== block.id,
 							},
 						)}
 					>
 						<h2
-							className={cn("font-bold transition-all duration-500", {
+							className={cn("font-bold transition-all duration-300", {
 								"text-5xl text-black mb-20": activeBlock === block.id, // Larger text size when active
 								"text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
 							})}
@@ -63,7 +63,7 @@ export default function ServicesSection() {
 						{activeBlock === block.id && (
 							<div className="px-5 py-3 overflow-hidden">
 								<p className="mb-4 translate-y-10" ref={sectionP} >{block.content}</p>
-								<button className="btn-primary rounded-2xl px-5 py-2 bg-black text-white">
+								<button className="btn-primary bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
 									Read more
 								</button>
 							</div>
