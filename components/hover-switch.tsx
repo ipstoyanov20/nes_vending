@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const SwitchContainer = ({ isChecked, children, onClick } : { isChecked:any, children: any, onClick:any }) => {
   return (
     <div
-        className='mt-20'
+        className='mt-20 sm:scale-[500%] scale-[250%]'
       style={{
         position: 'relative',
         display: 'inline-block',
@@ -11,7 +11,7 @@ const SwitchContainer = ({ isChecked, children, onClick } : { isChecked:any, chi
         height: 34,
         backgroundColor: isChecked ? '#0bc148' : '#de0015',
         borderRadius: 34,
-        transform: 'scale(5)',
+        // transform: 'scale(5)',
         transition: 'background-color 0.3s ease-in-out',
         cursor: 'pointer', // Make the entire container clickable
       }}

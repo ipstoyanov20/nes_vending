@@ -44,7 +44,7 @@ export default function ServicesSection() {
 						onClick={() => setActiveBlock(block.id)}
 						data-active={activeBlock === block.id}
 						className={cn(
-							"group flex flex-col sm:flex-row transition-all duration-300 w-full p-5 rounded-xl cursor-pointer",
+							"group grid grid-rows-1 sm:grid-cols-2 sm:grid-rows-1 transition-all duration-300 w-full p-5 rounded-xl cursor-pointer",
 							{
 								"bg-white text-[#0b182b] text-xl":
 									activeBlock === block.id ,
@@ -53,17 +53,17 @@ export default function ServicesSection() {
 						)}
 					>
 						<h2
-							className={cn("font-bold px-5 font-nuni transition-all duration-300", {
-								"text-5xl text-black mb-5 sm:mb-20": activeBlock === block.id, // Larger text size when active
-								"text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
+							className={cn("font-bold px-5 h-auto font-nuni transition-all duration-300", {
+								"text-2xl sm:text-5xl text-black mb-5 sm:mb-20": activeBlock === block.id, // Larger text size when active
+								"text-xl sm:text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
 							})}
 						>
 							{block.title}
 						</h2>
 						{activeBlock === block.id && (
-							<div className="px-5 py-3 overflow-hidden">
-								<p className="mb-4 font-nuni translate-y-10" ref={sectionP} >{block.content}</p>
-								<button className="btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
+							<div className="px-5 overflow-hidden">
+								<p className="mb-4 font-nuni translate-y-10 text-lg sm:text-xl" ref={sectionP} >{block.content}</p>
+								<button className="sm:scale-1000 sm:translate-x-5 -translate-x-5 whitespace-nowrap  scale-[80%] btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
 									Read more
 								</button>
 							</div>
