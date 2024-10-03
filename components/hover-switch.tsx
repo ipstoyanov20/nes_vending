@@ -7,7 +7,7 @@ import SplitType from "split-type";
 const SwitchContainer = ({ isChecked, children, onClick } : { isChecked:any, children: any, onClick:any }) => {
   return (
     <div
-        className='mt-20 sm:scale-[500%] scale-[250%]'
+        className='translate-y-[300%] sm:scale-[500%] scale-[250%]'
       style={{
         position: 'relative',
         display: 'inline-block',

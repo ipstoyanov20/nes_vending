@@ -17,7 +17,7 @@ import {
   faTiktok,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 export default function Home() {
@@ -213,17 +213,17 @@ export default function Home() {
 						data-aos="fade-up"
 						className="sm:w-auto w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]"
 					>
-						<p className="text-xl uppercase font-nuni">
+						<p className="text-md sm:text-xl uppercase font-nuni">
 							Вашето удоволствие <br />
 							на едно копче разстояниe
 						</p>
-						<h1 className="text-7xl sm:text-8xl font-clash font-bold text-[#183D66]">
+						<h1 className="text-6xl sm:text-8xl font-clash font-bold text-[#183D66]">
 							<p className="overflow-hidden" ref={titleRef}>
 								NES
 							</p>
 							<p>Vending</p>
 						</h1>
-						<p className="text-md font-nuni italic text-wrap w-full"> Перфектни за
+						<p className="text-sm sm:text-md font-nuni italic text-wrap w-full"> Перфектни за
 							офиси, училища и обществени пространства, <br /> NES Vending съчетава
 							съвременна технология с надеждност.
 						</p>
@@ -253,7 +253,7 @@ export default function Home() {
 					</p>
 				</aside>
 				<nav>
-					<h6 className="footer-title">Social</h6>
+					<h6 className="footer-title">Социални мрежи</h6>
 					<div className="grid grid-flow-col gap-4">
 						<a>
 							<FontAwesomeIcon icon={faTiktok} size="2x" />
@@ -263,6 +263,15 @@ export default function Home() {
 						</a>
 						<a>
 							<FontAwesomeIcon icon={faEnvelope} size="2x" />
+						</a>
+					</div>
+				</nav>
+				<nav>
+					<h6 className="footer-title">Телефон</h6>
+					<div className="grid grid-flow-col gap-4">
+						<a href="tel:0886611719" className="flex flex-row items-center gap-2">
+							<FontAwesomeIcon icon={faPhone} size="2x" />
+							<p className="font-nuni font-bold text-xl ml-5">0886611719</p>
 						</a>
 					</div>
 				</nav>

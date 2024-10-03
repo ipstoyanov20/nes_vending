@@ -64,9 +64,9 @@ export default function ServicesSection() {
 							{block.title}
 						</h2>
 						{activeBlock === block.id && (
-							<div className="px-5 overflow-hidden">
-								<p className="mb-4 font-nuni translate-y-10 text-lg sm:text-xl" ref={sectionP} >{block.content}</p>
-								<button className="sm:scale-1000 sm:-translate-x-4 -translate-x-5 whitespace-nowrap  scale-[80%] btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
+							<div className="px-5">
+								<p className="mb-4 font-nuni translate-y-10 text-sm sm:text-xl w-[100%] sm:w-full" ref={sectionP} >{block.content}</p>
+								<button className="sm:scale-1000 sm:-translate-x-4 -translate-x-5 whitespace-nowrap  scale-[80%] btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 text-white">
 									Read more
 								</button>
 							</div>
