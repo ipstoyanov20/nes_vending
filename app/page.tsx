@@ -12,7 +12,6 @@ import SuccessStories from "@/components/how-it-works";
 import ReadySection from "@/components/ready";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import footerIcon from '../app/favicon.ico'
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTiktok,

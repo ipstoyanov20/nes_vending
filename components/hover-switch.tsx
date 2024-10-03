@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useState, useEffect, useRef} from 'react';
+import gsap from "gsap";
+import SplitType from "split-type";
+
 
 const SwitchContainer = ({ isChecked, children, onClick } : { isChecked:any, children: any, onClick:any }) => {
   return (
@@ -40,6 +44,47 @@ const SwitchButton = ({ isChecked } : {isChecked:any}) => {
     );
 };
 
+const Phone = ({ isChecked } : {isChecked:any}) => {
+  const phoneRef = useRef(null);
+  useEffect(()=>{
+    phoneRef.current ? new SplitType(phoneRef.current) : null;
+    let chars = document.querySelectorAll(".char");
+    
+    for (let i = 0; i < chars.length; i++) {
+      chars[i].classList.add("translate-y-[300%]");
+    }
+    
+    gsap.to(".char", {
+      y: 0,
+      stagger: 0.05,
+      duration: 0.5,
+      opacity: 1,
+      delay: 0.5,
+    });
+  })
+  return (
+
+    <label
+    ref={phoneRef}
+    className='font-bold font-nuni whitespace-nowrap'
+    style={{
+      position: 'absolute',
+      overflow: 'hidden',
+      top: isChecked ? '130%' : '80%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      fontSize: 7,
+      color:'white',
+      opacity: isChecked ? '1' : '0',
+      pointerEvents: 'none',
+      transition: 'all 0.3s ease-in-out',
+    }}
+    >
+        0886611719 
+         </label>
+    );
+};
+
 const SwitchLabel = ({ isChecked }: { isChecked:any}) => {
     return (
         <label
@@ -72,6 +117,7 @@ const HoverSwitch = () => {
     <SwitchContainer isChecked={isChecked} onClick={handleToggle}>
       <SwitchButton isChecked={isChecked} />
       <SwitchLabel isChecked={isChecked} />
+      <Phone isChecked={isChecked} />
     </SwitchContainer>
   );
 };

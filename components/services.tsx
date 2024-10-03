@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import AOS from "aos";
@@ -7,14 +7,17 @@ import cn from "classnames"; // Importing the classnames utility
 
 export default function ServicesSection() {
   const sectionP = useRef(null);
-	useEffect(() => {
-		AOS.init();
-    gsap.to(sectionP.current, {
-      duration: 0.5,
-      ease: "power4.out",
-      opacity: 1,
-      y: 0,
-    });
+  
+  useEffect(() => {
+	  AOS.init();
+	  
+
+		gsap.to(sectionP.current, {
+		duration: 0.5,
+		ease: "power4.out",
+		opacity: 1,
+		y: 0,
+		});
 	});
 
 	const [activeBlock, setActiveBlock] = useState<string | null>(null);
@@ -63,7 +66,7 @@ export default function ServicesSection() {
 						{activeBlock === block.id && (
 							<div className="px-5 overflow-hidden">
 								<p className="mb-4 font-nuni translate-y-10 text-lg sm:text-xl" ref={sectionP} >{block.content}</p>
-								<button className="sm:scale-1000 sm:translate-x-5 -translate-x-5 whitespace-nowrap  scale-[80%] btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
+								<button className="sm:scale-1000 sm:-translate-x-4 -translate-x-5 whitespace-nowrap  scale-[80%] btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 bg-black text-white">
 									Read more
 								</button>
 							</div>
