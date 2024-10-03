@@ -59,9 +59,9 @@ const Phone = ({ isChecked } : {isChecked:any}) => {
       stagger: 0.05,
       duration: 0.5,
       opacity: 1,
-      delay: 0.5,
+      delay: 0,
     });
-  })
+  },[isChecked])
   return (
 
     <label
