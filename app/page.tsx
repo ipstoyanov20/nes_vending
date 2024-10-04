@@ -269,9 +269,9 @@ export default function Home() {
 				<nav>
 					<h6 className="footer-title">Телефон</h6>
 					<div className="grid grid-flow-col gap-4">
-						<a href="tel:0886611719" className="flex flex-row items-center gap-2">
+						<a href="tel:0877779576" className="flex flex-row items-center gap-2">
 							<FontAwesomeIcon icon={faPhone} size="2x" />
-							<p className="font-nuni font-bold text-xl ml-5">0886611719</p>
+							<p className="font-nuni font-bold text-xl ml-5">087 777 9576</p>
 						</a>
 					</div>
 				</nav>
