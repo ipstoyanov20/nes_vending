@@ -238,7 +238,7 @@ export default function Home() {
 				<ReadySection/>
 			</main>
 			{/* fotter */}
-			<footer className="footer h-auto w-screen bg-base-100 text-[#183D66] p-10">
+			<footer className="footer h-auto  w-screen bg-base-100 text-[#183D66] p-10">
 				<aside>
 					<Image
 					src={footerIcon}
