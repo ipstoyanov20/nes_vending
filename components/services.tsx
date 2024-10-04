@@ -6,17 +6,16 @@ import "aos/dist/aos.css";
 import cn from "classnames"; // Importing the classnames utility
 
 export default function ServicesSection() {
-  const sectionP = useRef(null);
-  
-  useEffect(() => {
-	  AOS.init();
-	  
+	const sectionP = useRef(null);
+
+	useEffect(() => {
+		AOS.init();
 
 		gsap.to(sectionP.current, {
-		duration: 0.5,
-		ease: "power4.out",
-		opacity: 1,
-		y: 0,
+			duration: 0.5,
+			ease: "power4.out",
+			opacity: 1,
+			y: 0,
 		});
 	});
 
@@ -25,13 +24,13 @@ export default function ServicesSection() {
 	const blocks = [
 		{
 			id: "strategy",
-			title: "Стратегия",
-			content: `Графичните и типографските оператори знаят това добре, в действителност всички професии, занимаващи се с комуникационната вселена, имат стабилна връзка с тези думи, но какво е това?`,
+			title: "Инсталация",
+			content: `Нашият екип осигурява бърза и професионална инсталация, която е съобразена с нуждите на вашия офис или дом. Ние разбираме значението на безпроблемната интеграция на машините и гарантираме, че всичко е инсталирано прецизно и ефективно, за да осигури максимална производителност.`,
 		},
 		{
 			id: "creative",
-			title: "Креативност",
-			content: `Графичните и типографските оператори знаят това добре, в действителност всички професии, занимаващи се с комуникационната вселена, имат стабилна връзка с тези думи, но какво е това?`,
+			title: "Поддръжка",
+			content: `Редовната поддръжка е ключът към дълготрайността и ефективността на нашите машини. Нашият екип осигурява навременно зареждане и сервиз, така че да може да се фокусирате върху вашия бизнес, без да се притеснявате за технически проблеми.`,
 		},
 	];
 
@@ -41,7 +40,7 @@ export default function ServicesSection() {
 				Нашите услуги
 			</h1>
 			<div className="flex flex-col gap-y-5 items-center justify-center text-black w-full">
-				{blocks.map((block) => (
+				{blocks.map((block, index) => (
 					<div
 						key={block.id}
 						onClick={() => setActiveBlock(block.id)}
@@ -49,26 +48,35 @@ export default function ServicesSection() {
 						className={cn(
 							"group grid grid-rows-1 sm:grid-cols-2 sm:grid-rows-1 transition-all duration-300 w-full p-5 rounded-xl cursor-pointer",
 							{
-								"bg-white text-[#0b182b] text-xl":
-									activeBlock === block.id ,
+								"bg-white text-[#0b182b] text-xl": activeBlock === block.id,
 								"bg-[#0B192C] text-white text-xl": activeBlock !== block.id,
 							},
 						)}
 					>
 						<h2
-							className={cn("font-bold px-5 h-auto font-nuni transition-all duration-300", {
-								"text-2xl sm:text-5xl text-black mb-5 sm:mb-20": activeBlock === block.id, // Larger text size when active
-								"text-xl sm:text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
-							})}
+							className={cn(
+								"font-bold px-5 h-auto font-nuni transition-all duration-300",
+								{
+									"text-2xl sm:text-5xl text-black mb-5 sm:mb-20":
+										activeBlock === block.id, // Larger text size when active
+									"text-xl sm:text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
+								},
+							)}
 						>
 							{block.title}
 						</h2>
 						{activeBlock === block.id && (
 							<div className="px-5">
-								<p className="mb-4 font-nuni translate-y-10 text-sm sm:text-xl w-[100%] sm:w-full" ref={sectionP} >{block.content}</p>
-								<button className="sm:scale-1000 sm:-translate-x-4 -translate-x-5 whitespace-nowrap  scale-[80%] btn-primary font-nuni bg-[#0b182b] rounded-2xl px-5 py-2 text-white">
-									Read more
-								</button>
+								<p
+									className="mb-4 font-nuni text-sm sm:text-xl w-[100%] sm:w-full"
+									style={{
+										opacity: 0,
+										transform: index > 0 ? "translateY(-150px)" : "translateY(150px)",
+									}}
+									ref={sectionP}
+								>
+									{block.content}
+								</p>
 							</div>
 						)}
 					</div>

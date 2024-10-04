@@ -1,74 +1,103 @@
-// SuccessStories.tsx
-import React from "react";
+import React, { useState } from "react";
 
 // Data array containing all the items displayed in the component
 const successStoriesData = [
 	{
 		id: 1,
-		title: "Filling Pieces",
-		imgUrl: "https://via.placeholder.com/300", // Replace with actual image URL
+		title: "Приятна атмосфера за",
+		subtitle: "екипа ви",
+		imgUrl: "nes-machine.png", // Replace with actual image URL
 		bgColor: "bg-gray-100",
 		textColor: "text-gray-800",
 		isLarge: true,
-		buttonText: "Headless",
-	},
-	{
+		buttonText: "Уют",
+	  },
+	  {
 		id: 2,
-		title: "Mr Marvis",
-		imgUrl: "https://via.placeholder.com/300", // Replace with actual image URL
+		title: "Професионално",
+		subtitle: "кафе у дома",
+		imgUrl: "nes-machine.png", // Replace with actual image URL
 		bgColor: "bg-yellow-400",
 		textColor: "text-black",
 		isLarge: true,
-		buttonText: "Headless",
-	},
-	{
+		buttonText: "Комфорт",
+	  },
+	  {
 		id: 3,
-		title: "Denham",
-		imgUrl: "https://via.placeholder.com/300", // Replace with actual image URL
+		title: "Модерен дизайн",
+		subtitle: "и удобство",
+		imgUrl: "nes-machine.png", // Replace with actual image URL
 		bgColor: "bg-gray-700",
 		textColor: "text-white",
 		isLarge: true,
-		buttonText: "Headless",
-	},
+		buttonText: "Стил",
+	  }
+	  
 ];
 
 const SuccessStories = () => {
+	// State to track if "See our work" button is clicked
+	const [isWorkVisible, setIsWorkVisible] = useState(false);
+
+	// Function to handle button click
+	const handleButtonClick = () => {
+		setIsWorkVisible(!isWorkVisible); // Toggle the state
+	};
+
 	return (
-		<section className="grid w-screen grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-center place-content-center p-8 bg-white">
+		<section className="grid w-screen h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-center place-content-center p-8 bg-white">
 			{/* Left section */}
 			<div className="flex flex-col space-y-6 md:w-1/2">
 				<h1 className="text-4xl text-[#0b182b] font-bold leading-tight">
-					Патрниор in success stories
+					Партньори в една успешна история
 				</h1>
-				<button className="px-4 py-2 bg-gray-300 rounded-full text-gray-700 font-medium w-fit">
-					See our work
+				<button
+					onClick={handleButtonClick}
+					className="px-4 py-2 bg-gray-300 rounded-full text-gray-700 font-medium w-fit"
+				>
+					Виж тук
 				</button>
 			</div>
 
 			{/* Right section */}
 			<div className="flex flex-col justify-start items-start relative md:flex-row gap-4 w-[100%] h-80 md:mt-0">
-				<div className="absolute scale-[80%]  sm:scale-100  sm:left-[30%]">
+				<div className="absolute scale-[80%]  sm:scale-100  sm:left-[10%] sm:top-[-30%] transition-all duration-500 ease-in-out">
 					{successStoriesData.map((item, index) => (
 						<div
 							key={item.id}
 							className={`${
 								item.bgColor
-							} absolute top-10 p-4 rounded-lg shadow-lg flex ${
+							} absolute top-10 w-[253px] p-4 rounded-lg shadow-lg flex ${
 								item.isLarge ? "flex-col items-start" : "items-center"
-							}`}
-							style={{ zIndex: index, left: `${index * 100}px` }}
+							} transition-all duration-500 ease-in-out`}
+							// Conditionally adjust the left position based on isWorkVisible state
+							style={{
+								zIndex: index,
+								left: `${index * 100}px`, // Default position for equal spacing
+								// Apply margin adjustments when "See our work" is clicked
+								transform: isWorkVisible
+									? index === 0 // First card
+										? "translateX(-180px)" // Move forward to the left
+										: index === successStoriesData.length - 1 // Last card
+										? "translateX(180px)" // Move forward to the right
+										: "none"
+									: "none",
+							}}
 						>
 							<img
 								src={item.imgUrl}
 								alt={item.title}
 								className={`rounded-md ${
 									item.isLarge
-										? "h-32 w-full mb-4 object-cover"
+										? "h-[50%] w-full mb-4 object-fit"
 										: "h-16 object-cover"
 								}`}
 							/>
 							<span className={`ml-4 text-lg whitespace-nowrap font-semibold ${item.textColor}`}>
 								{item.title}
+							</span>
+							<span className={`ml-4 text-lg whitespace-nowrap font-semibold ${item.textColor}`}>
+								{item.subtitle}
 							</span>
 							{item.isLarge && (
 								<button className="mt-2 px-4 py-1 bg-gray-300 rounded-full text-gray-700 font-medium">

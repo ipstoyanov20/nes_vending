@@ -1,29 +1,28 @@
 "use client"
-import React, { useState, useEffect, useRef} from 'react';
-import gsap from "gsap";
-import SplitType from "split-type";
+import React, { useState} from 'react';
 
 
 const SwitchContainer = ({ isChecked, children, onClick } : { isChecked:any, children: any, onClick:any }) => {
   return (
-    <div
-        className='translate-y-[300%] lg:max-xl:scale-[500%] scale-[290%]'
-      style={{
-        position: 'relative',
-        display: 'inline-block',
-        width: 65,
-        height: 34,
-        backgroundColor: isChecked ? '#0bc148' : '#de0015',
-        borderRadius: 34,
-        // transform: 'scale(5)',
-        transition: 'background-color 0.3s ease-in-out',
-        cursor: 'pointer', // Make the entire container clickable
-      }}
-      onClick={onClick}
-    >
-      {children}
-    </div>
-  );
+		<a href={isChecked ? "tel:+359886611719" : undefined}  className='w-fit'>
+			<div
+				className="translate-y-[300%] lg:max-xl:scale-[500%] xl:scale-[500%] scale-[290%]"
+				style={{
+					position: "relative",
+					display: "inline-block",
+					width: 65,
+					height: 34,
+					backgroundColor: isChecked ? "#0bc148" : "#de0015",
+					borderRadius: 34,
+					transition: "background-color 0.3s ease-in-out",
+					cursor: "pointer", 
+				}}
+				onClick={onClick}
+			>
+				{children}
+			</div>
+		</a>
+	);
 };
 
 const SwitchButton = ({ isChecked } : {isChecked:any}) => {
@@ -44,46 +43,6 @@ const SwitchButton = ({ isChecked } : {isChecked:any}) => {
     );
 };
 
-const Phone = ({ isChecked } : {isChecked:any}) => {
-  const phoneRef = useRef(null);
-  useEffect(()=>{
-    phoneRef.current ? new SplitType(phoneRef.current) : null;
-    let chars = document.querySelectorAll(".char");
-    
-    for (let i = 0; i < chars.length; i++) {
-      chars[i].classList.add("translate-y-[300%]");
-    }
-    
-    gsap.to(".char", {
-      y: 0,
-      stagger: 0.05,
-      duration: 0.5,
-      opacity: 1,
-      delay: 0,
-    });
-  },[isChecked])
-  return (
-
-    <label
-    ref={phoneRef}
-    className='font-bold font-nuni whitespace-nowrap'
-    style={{
-      position: 'absolute',
-      overflow: 'hidden',
-      top: isChecked ? '130%' : '80%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      fontSize: 7,
-      color:'white',
-      opacity: isChecked ? '1' : '0',
-      pointerEvents: 'none',
-      transition: 'all 0.3s ease-in-out',
-    }}
-    >
-        0886611719 
-         </label>
-    );
-};
 
 const SwitchLabel = ({ isChecked }: { isChecked:any}) => {
     return (
@@ -117,7 +76,6 @@ const HoverSwitch = () => {
     <SwitchContainer isChecked={isChecked} onClick={handleToggle}>
       <SwitchButton isChecked={isChecked} />
       <SwitchLabel isChecked={isChecked} />
-      <Phone isChecked={isChecked} />
     </SwitchContainer>
   );
 };
