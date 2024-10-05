@@ -58,7 +58,7 @@ const SuccessStories = () => {
 	};
 
 	return (
-		<section className="grid w-screen h-[100vh] md:h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-center place-content-center p-8 bg-white">
+		<section id="how" className="sm:pt-[126px] pt-[64px] grid w-screen h-[100vh] md:h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-center place-content-center p-8 bg-white">
 			{/* Left section */}
 			<div className="flex flex-col space-y-6 md:w-1/2">
 				<h1 className="text-4xl text-[#0b182b] font-bold leading-tight">

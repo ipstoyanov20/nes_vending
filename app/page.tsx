@@ -101,7 +101,7 @@ export default function Home() {
 								<a
 									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
 									onClick={handleToggleMenu}
-									href="#genres"
+									href="#aboutUs"
 								>
 									ЗА НАС
 								</a>
@@ -119,7 +119,7 @@ export default function Home() {
 								<a
 									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
 									onClick={handleToggleMenu}
-									href="#order"
+									href="#ready"
 								>
 									СВЪРЖЕТЕ СЕ
 								</a>
@@ -158,7 +158,7 @@ export default function Home() {
 						<li>
 							<a
 								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
-								href="#genres"
+								href="#aboutUs"
 							>
 								ЗА НАС
 							</a>
@@ -174,7 +174,7 @@ export default function Home() {
 						<li>
 							<a
 								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
-								href="#order"
+								href="#ready"
 							>
 								СВЪРЖЕТЕ СЕ
 							</a>
@@ -196,7 +196,7 @@ export default function Home() {
 							<Image
 								src={vm1}
 								className="scale-0 top-[-50%] left-0 absolute"
-								ref={vend1Ref} 	
+								ref={vend1Ref}
 								alt="Vending Machine"
 							/>
 						</div>
@@ -223,33 +223,36 @@ export default function Home() {
 							</p>
 							<p>Vending</p>
 						</h1>
-						<p className="text-sm sm:text-md font-nuni italic text-wrap w-full"> Перфектни за
-							офиси, училища и обществени пространства, <br /> NES Vending съчетава
-							съвременна технология с надеждност.
+						<p className="text-sm sm:text-md font-nuni italic text-wrap w-full">
+							{" "}
+							Перфектни за офиси, училища и обществени пространства, <br /> NES
+							Vending съчетава съвременна технология с надеждност.
 						</p>
-						<button className="uppercase font-nuni text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
-							Свържи се
-						</button>
+						<a href="#ready">
+							<button className="uppercase font-nuni text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
+								Свържи се
+							</button>
+						</a>
 					</div>
 				</div>
 				{/* service section */}
-				<ServicesSection/>
-				<SuccessStories/>
-				<ReadySection/>
+				<ServicesSection />
+				<SuccessStories />
+				<ReadySection />
 			</main>
 			{/* fotter */}
 			<footer className="footer h-auto  w-screen bg-base-100 text-[#183D66] p-10">
 				<aside>
 					<Image
-					src={footerIcon}
-					alt="logo"
-					style={{ width: "50px", height: "50px" }}
-					className="z-0"
-				/>
+						src={footerIcon}
+						alt="logo"
+						style={{ width: "50px", height: "50px" }}
+						className="z-0"
+					/>
 					<p>
 						Nes Vending<span className="text-lg ml-2">&reg;</span>
-					  <br />
-					All rights reserved &copy; 2024
+						<br />
+						All rights reserved &copy; 2024
 					</p>
 				</aside>
 				<nav>
@@ -269,7 +272,10 @@ export default function Home() {
 				<nav>
 					<h6 className="footer-title">Телефон</h6>
 					<div className="grid grid-flow-col gap-4">
-						<a href="tel:0877779576" className="flex flex-row items-center gap-2">
+						<a
+							href="tel:0877779576"
+							className="flex flex-row items-center gap-2"
+						>
 							<FontAwesomeIcon icon={faPhone} size="2x" />
 							<p className="font-nuni font-bold text-xl ml-5">087 777 9576</p>
 						</a>
