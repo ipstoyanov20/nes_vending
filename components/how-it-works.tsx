@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Data array containing all the items displayed in the component
 const successStoriesData = [
@@ -37,7 +37,21 @@ const successStoriesData = [
 const SuccessStories = () => {
 	// State to track if "See our work" button is clicked
 	const [isWorkVisible, setIsWorkVisible] = useState(false);
+	const [windowWidth, setWindowWidth] = useState(0);
 
+	useEffect(() => {
+	  // Function to update window width
+	  const handleResize = () => setWindowWidth(window.innerWidth);
+  
+	  // Set initial width
+	  handleResize();
+  
+	  // Add event listener
+	  window.addEventListener('resize', handleResize);
+  
+	  // Cleanup listener on component unmount
+	  return () => window.removeEventListener('resize', handleResize);
+	}, []);
 	// Function to handle button click
 	const handleButtonClick = () => {
 		setIsWorkVisible(!isWorkVisible); // Toggle the state
@@ -75,7 +89,7 @@ const SuccessStories = () => {
 								left: `${index * 100}px`, // Default position for equal spacing
 								// Apply margin adjustments when "See our work" is clicked
 								transform:
-									window.innerWidth > 768
+									windowWidth > 768
 										? index === 0 && isWorkVisible // First card
 											? "translateX(-180px)" // Move forward to the left
 											: index === successStoriesData.length - 1  && isWorkVisible // Last card

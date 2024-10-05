@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import cn from "classnames"; // Importing the classnames utility
