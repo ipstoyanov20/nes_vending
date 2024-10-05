@@ -35,31 +35,24 @@ const successStoriesData = [
 ];
 
 const SuccessStories = () => {
-	// State to track if "See our work" button is clicked
 	const [isWorkVisible, setIsWorkVisible] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
 
 	useEffect(() => {
-	  // Function to update window width
 	  const handleResize = () => setWindowWidth(window.innerWidth);
   
-	  // Set initial width
 	  handleResize();
   
-	  // Add event listener
 	  window.addEventListener('resize', handleResize);
   
-	  // Cleanup listener on component unmount
 	  return () => window.removeEventListener('resize', handleResize);
 	}, []);
-	// Function to handle button click
 	const handleButtonClick = () => {
-		setIsWorkVisible(!isWorkVisible); // Toggle the state
+		setIsWorkVisible(!isWorkVisible); 
 	};
 
 	return (
 		<section id="how" className="sm:pt-[126px] pt-[64px] grid w-screen h-[100vh] md:h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-center place-content-center p-8 bg-white">
-			{/* Left section */}
 			<div className="flex flex-col space-y-6 md:w-1/2">
 				<h1 className="text-4xl text-[#0b182b] font-bold leading-tight">
 					Партньори в <br />една успешна история
@@ -72,7 +65,6 @@ const SuccessStories = () => {
 				</button>
 			</div>
 
-			{/* Right section */}
 			<div className="flex flex-col justify-start items-start relative md:flex-row gap-4 w-[100%] h-80 md:mt-0">
 				<div className="absolute scale-[45%] sm:scale-[60%] top-[-20%] sm:top-[-70%] md:scale-100 sm:left-[10%] md:top-[-30%] transition-all duration-500 ease-in-out">
 					{successStoriesData.map((item, index) => (
@@ -83,11 +75,9 @@ const SuccessStories = () => {
 							} absolute top-10 w-[253px] p-4 rounded-lg shadow-lg flex ${
 								item.isLarge ? "flex-col items-start" : "items-center"
 							} transition-all duration-500 ease-in-out`}
-							// Conditionally adjust the left position based on isWorkVisible state
 							style={{
 								zIndex: index,
-								left: `${index * 100}px`, // Default position for equal spacing
-								// Apply margin adjustments when "See our work" is clicked
+								left: `${index * 100}px`,
 								transform:
 									windowWidth > 768
 										? index === 0 && isWorkVisible // First card

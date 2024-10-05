@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {faPhone } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from 'react';
-import FontAwesome from 'react-fontawesome';
 
 const SwitchContainer = ({ isChecked, children, onClick }: { isChecked: any, children: any, onClick: any }) => {
   return (
@@ -81,11 +80,11 @@ const LoadingScreen = () => {
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1000,
-        backdropFilter: 'blur(10px)', // Add blur effect
+        backdropFilter: 'blur(10px)', 
 
       }}
     >
-      {/* Faphone animation or loader */}
+      
       <div style={{ fontSize: '24px', color: 'white' }}><FontAwesomeIcon className="animate-pulse" icon={faPhone} size="5x" /></div>
     </div>
   );
@@ -106,7 +105,7 @@ const HoverSwitch = () => {
     setTimeout(() => {
       setIsChecked(!isChecked);
       wait(1000).then(() => {
-        window.location.href = "tel:+359886611719";
+        window.location.href = "tel:+35987 777 9576";
       });
       setLoading(false);
     }, 2000);

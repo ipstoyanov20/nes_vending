@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
-gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -59,9 +59,9 @@ export default function Home() {
 			opacity: 1,
 			delay: 0.5,
 			scrollTrigger: {
-				trigger: aboutusRef.current, // Element that triggers the animation
-				start: "top 80%", // Start animation when top of element is 80% from the top of the viewport
-				toggleActions: "play none none none", // Play animation on scroll in
+				trigger: aboutusRef.current, 
+				start: "top 80%", 
+				toggleActions: "play none none none",
 			  },
 		});
 		gsap.to(vend1Ref.current, {
@@ -150,7 +150,7 @@ export default function Home() {
 								strokeLinejoin="round"
 								strokeWidth="2"
 								stroke="currentColor"
-								d="M4 7h15M4 12h7m-4 6h8" // Changed the form of the lines
+								d="M4 7h15M4 12h7m-4 6h8"
 							/>
 						</svg>
 					</button>
@@ -200,14 +200,6 @@ export default function Home() {
 								alt="Vending Machine"
 							/>
 						</div>
-						{/* <div className="absolute z-[20] rounded-md -bottom-[100px] p-5 -left-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
-							<Image
-								src={vm1}
-								className="scale-0"
-								alt="Vending Machine"
-								ref={vend2Ref}
-							/>
-						</div> */}
 					</div>
 					<div
 						data-aos="fade-up"

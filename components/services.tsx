@@ -57,8 +57,8 @@ export default function ServicesSection() {
 								"font-bold px-5 h-auto font-nuni transition-all duration-300",
 								{
 									"text-2xl sm:text-5xl text-black mb-5 sm:mb-20":
-										activeBlock === block.id, // Larger text size when active
-									"text-xl sm:text-2xl text-white": activeBlock !== block.id, // Default text size when inactive
+										activeBlock === block.id, 
+									"text-xl sm:text-2xl text-white": activeBlock !== block.id, 
 								},
 							)}
 						>
