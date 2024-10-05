@@ -1,10 +1,14 @@
 "use client";
+const wait = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import React, { useState, useEffect } from 'react';
+import {faPhone } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import FontAwesome from 'react-fontawesome';
 
 const SwitchContainer = ({ isChecked, children, onClick }: { isChecked: any, children: any, onClick: any }) => {
   return (
-    <a href={isChecked ? "tel:+359886611719" : undefined} className='w-fit'>
+    
       <div
         className="translate-y-[300%] lg:max-xl:scale-[500%] xl:scale-[500%] scale-[290%]"
         style={{
@@ -21,7 +25,6 @@ const SwitchContainer = ({ isChecked, children, onClick }: { isChecked: any, chi
       >
         {children}
       </div>
-    </a>
   );
 };
 
@@ -78,10 +81,12 @@ const LoadingScreen = () => {
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1000,
+        backdropFilter: 'blur(10px)', // Add blur effect
+
       }}
     >
       {/* Faphone animation or loader */}
-      <div style={{ fontSize: '24px', color: 'white' }}>Loading...</div>
+      <div style={{ fontSize: '24px', color: 'white' }}><FontAwesomeIcon className="animate-pulse" icon={faPhone} size="5x" /></div>
     </div>
   );
 };
@@ -91,15 +96,18 @@ const HoverSwitch = () => {
   const [loading, setLoading] = useState(false);
 
   const handleToggle = () => {
-    if (!isChecked) {
+    if (isChecked) {
       setLoading(false);
+      setIsChecked(!isChecked);
       return;
     }
     setLoading(true);
-    setIsChecked(!isChecked);
     
-    // Simulate a loading time of 1000ms (1 second)
     setTimeout(() => {
+      setIsChecked(!isChecked);
+      wait(1000).then(() => {
+        window.location.href = "tel:+359886611719";
+      });
       setLoading(false);
     }, 2000);
   };
