@@ -17,7 +17,7 @@ import {
   faTiktok,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import {faPhone } from "@fortawesome/free-solid-svg-icons";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
@@ -99,7 +99,7 @@ export default function Home() {
 						<ul className="menu menu-vertical">
 							<li>
 								<a
-									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
+									className="font-grotesk font-bold nav-link relative text-3xl text-[#183D66]"
 									onClick={handleToggleMenu}
 									href="#aboutUs"
 								>
@@ -108,7 +108,7 @@ export default function Home() {
 							</li>
 							<li>
 								<a
-									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
+									className="font-grotesk font-bold nav-link relative text-3xl text-[#183D66]"
 									onClick={handleToggleMenu}
 									href="#how"
 								>
@@ -117,7 +117,7 @@ export default function Home() {
 							</li>
 							<li>
 								<a
-									className="font-grotesk font-bold nav-link relative text-4xl text-[#183D66]"
+									className="font-grotesk font-bold nav-link relative text-3xl text-[#183D66]"
 									onClick={handleToggleMenu}
 									href="#ready"
 								>
@@ -192,7 +192,7 @@ export default function Home() {
 							className="rounded-lg z-[1] h-auto"
 							alt="Vending Machine"
 						/>
-						<div className="animate-blob absolute z-[20] rounded-md -top-[100px] p-5 -right-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
+						<div className="animate-blob md:scale-75 lg:md:scale-100 absolute z-[20] rounded-md -top-[100px] p-5 -right-[100px] w-[200px] h-[200px] backdrop-blur-sm bg-opacity-50 bg-[#183D66]">
 							<Image
 								src={vm1}
 								className="scale-0 top-[-50%] left-0 absolute"
@@ -255,9 +255,6 @@ export default function Home() {
 						</a>
 						<a href="https://www.instagram.com/nes_vending?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
 							<FontAwesomeIcon icon={faInstagram} size="2x" />
-						</a>
-						<a>
-							<FontAwesomeIcon icon={faEnvelope} size="2x" />
 						</a>
 					</div>
 				</nav>

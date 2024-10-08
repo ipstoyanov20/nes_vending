@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-// Data array containing all the items displayed in the component
 const successStoriesData = [
 	{
 		id: 1,
 		title: "Приятна атмосфера за",
 		subtitle: "екипа ви",
-		imgUrl: "nes-machine.png", // Replace with actual image URL
+		imgUrl: "nes-machine.png",
 		bgColor: "bg-gray-100",
 		textColor: "text-gray-800",
 		isLarge: true,
@@ -16,7 +15,7 @@ const successStoriesData = [
 		id: 2,
 		title: "Професионално",
 		subtitle: "кафе у дома",
-		imgUrl: "nes-machine.png", // Replace with actual image URL
+		imgUrl: "nes-machine.png",
 		bgColor: "bg-yellow-400",
 		textColor: "text-black",
 		isLarge: true,
@@ -26,7 +25,7 @@ const successStoriesData = [
 		id: 3,
 		title: "Модерен дизайн",
 		subtitle: "и удобство",
-		imgUrl: "nes-machine.png", // Replace with actual image URL
+		imgUrl: "nes-machine.png",
 		bgColor: "bg-gray-700",
 		textColor: "text-white",
 		isLarge: true,
@@ -52,21 +51,21 @@ const SuccessStories = () => {
 	};
 
 	return (
-		<section id="how" className="grid w-screen h-[150vh] md:h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-start sm:place-items-center place-content-center p-8 bg-white">
-			<div className="flex flex-col space-y-6 md:w-1/2">
-				<h1 className="text-4xl text-[#0b182b] font-bold leading-tight">
+		<section id="how" className="grid w-screen h-[100vh] sm:h-[110vh] md:h-[100vh] lg:h-[80vh] xl:h-[60vh] grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 place-items-center p-8 bg-white">
+			<div className="flex flex-col mb-[20%] xl:mb-0 space-y-6 md:w-1/2">
+				<h1 className="text-4xl xl:text-7xl text-[#0b182b] font-bold leading-tight">
 					Партньори в една <br /> успешна история
 				</h1>
 				<button
 					onClick={handleButtonClick}
-					className="px-4 py-2 bg-gray-300 rounded-full text-gray-700 font-medium w-fit z-[100]"
+					className="px-4 py-2 xl:scale-[120%] bg-gray-300 rounded-full text-gray-700 font-medium w-fit z-[100]"
 				>
 					Виж тук
 				</button>
 			</div>
 
 			<div className="flex flex-col justify-start items-start relative md:flex-row gap-4 w-[100%] h-80 md:mt-0">
-				<div className="scale-[45%] sm:scale-[60%] top-[-20%] sm:top-[-70%] md:scale-[80%] sm:left-[10%] md:top-[-10%] transition-all duration-500 ease-in-out absolute">
+				<div className="scale-[40%] sm:scale-[50%] md:scale-[50%] xl:scale-100 left-[10%] sm:left-[30%] top-[-20%] sm:top-[-40%] md:top-[-50%] lg:top-[0%] lg:left-[0%] xl:top-[-20%]   transition-all duration-500 ease-in-out absolute">
 					{successStoriesData.map((item, index) => (
 						<div
 							key={item.id}

@@ -9,7 +9,7 @@ const SwitchContainer = ({ isChecked, children, onClick }: { isChecked: any, chi
   return (
     
       <div
-        className="xl:scale-[290%] 2xl:scale-[500%] scale-[180%]"
+        className="xl:scale-[280%] 2xl:scale-[450%] scale-[190%]"
         style={{
           position: "relative",
           display: "inline-block",
@@ -104,11 +104,11 @@ const HoverSwitch = () => {
     
     setTimeout(() => {
       setIsChecked(!isChecked);
-      wait(1000).then(() => {
+      wait(500).then(() => {
         window.location.href = "tel:+35987 777 9576";
       });
       setLoading(false);
-    }, 2000);
+    }, 1500);
   };
 
   return (
