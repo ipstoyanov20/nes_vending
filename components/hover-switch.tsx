@@ -9,7 +9,7 @@ const SwitchContainer = ({ isChecked, children, onClick }: { isChecked: any, chi
   return (
     
       <div
-        className="translate-y-[300%] lg:max-xl:scale-[500%] xl:scale-[500%] scale-[290%]"
+        className="xl:scale-[290%] 2xl:scale-[500%] scale-[180%]"
         style={{
           position: "relative",
           display: "inline-block",

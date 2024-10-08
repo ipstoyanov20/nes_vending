@@ -52,10 +52,10 @@ const SuccessStories = () => {
 	};
 
 	return (
-		<section id="how" className="sm:pt-[126px] pt-[64px] grid w-screen h-[100vh] md:h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-center place-content-center p-8 bg-white">
+		<section id="how" className="grid w-screen h-[150vh] md:h-[70vh] grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 place-items-start sm:place-items-center place-content-center p-8 bg-white">
 			<div className="flex flex-col space-y-6 md:w-1/2">
 				<h1 className="text-4xl text-[#0b182b] font-bold leading-tight">
-					Партньори в <br />една успешна история
+					Партньори в една <br /> успешна история
 				</h1>
 				<button
 					onClick={handleButtonClick}
@@ -66,7 +66,7 @@ const SuccessStories = () => {
 			</div>
 
 			<div className="flex flex-col justify-start items-start relative md:flex-row gap-4 w-[100%] h-80 md:mt-0">
-				<div className="absolute scale-[45%] sm:scale-[60%] top-[-20%] sm:top-[-70%] md:scale-100 sm:left-[10%] md:top-[-30%] transition-all duration-500 ease-in-out">
+				<div className="scale-[45%] sm:scale-[60%] top-[-20%] sm:top-[-70%] md:scale-[80%] sm:left-[10%] md:top-[-10%] transition-all duration-500 ease-in-out absolute">
 					{successStoriesData.map((item, index) => (
 						<div
 							key={item.id}
