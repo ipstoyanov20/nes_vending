@@ -51,7 +51,7 @@ const SuccessStories = () => {
 	};
 
 	return (
-		<section id="how" className="grid w-screen h-[150vh] sm:h-[110vh] md:h-[100vh] lg:h-[80vh] xl:h-[60vh] grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 place-items-center p-8 bg-white">
+		<section id="how" className="grid w-screen h-[max(150%,100vh)] sm:h-[110vh] md:h-[100vh] lg:h-[80vh] xl:h-[60vh] grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 place-items-center p-8 bg-white">
 			<div className="flex flex-col pt-10 mb-[20%] xl:mb-0 space-y-6 md:w-1/2">
 				<h1 className="text-4xl xl:text-5xl text-[#0b182b] font-bold leading-tight">
 					Партньори в една <br /> успешна история
