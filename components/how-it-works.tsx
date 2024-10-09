@@ -53,7 +53,7 @@ const SuccessStories = () => {
 	return (
 		<section id="how" className="grid w-screen h-[100vh] sm:h-[110vh] md:h-[100vh] lg:h-[80vh] xl:h-[60vh] grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 place-items-center p-8 bg-white">
 			<div className="flex flex-col mb-[20%] xl:mb-0 space-y-6 md:w-1/2">
-				<h1 className="text-4xl xl:text-7xl text-[#0b182b] font-bold leading-tight">
+				<h1 className="text-4xl xl:text-5xl text-[#0b182b] font-bold leading-tight">
 					Партньори в една <br /> успешна история
 				</h1>
 				<button
@@ -65,7 +65,7 @@ const SuccessStories = () => {
 			</div>
 
 			<div className="flex flex-col justify-start items-start relative md:flex-row gap-4 w-[100%] h-80 md:mt-0">
-				<div className="scale-[40%] sm:scale-[50%] md:scale-[50%] xl:scale-100 left-[10%] sm:left-[30%] top-[-20%] sm:top-[-40%] md:top-[-50%] lg:top-[0%] lg:left-[0%] xl:top-[-20%]   transition-all duration-500 ease-in-out absolute">
+				<div className="scale-[40%] sm:scale-[50%] md:scale-[50%] xl:scale-[65%] 2xl:scale-100 left-[10%] sm:left-[30%] top-[-20%] sm:top-[-40%] md:top-[-50%] lg:top-[0%] xl:top-[0%] lg:left-[0%] xl:top-[-20%]   transition-all duration-500 ease-in-out absolute">
 					{successStoriesData.map((item, index) => (
 						<div
 							key={item.id}
