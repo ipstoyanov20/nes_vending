@@ -250,9 +250,6 @@ export default function Home() {
 				<nav>
 					<h6 className="footer-title">Социални мрежи</h6>
 					<div className="grid grid-flow-col gap-4">
-						<a>
-							<FontAwesomeIcon icon={faTiktok} size="2x" />
-						</a>
 						<a href="https://www.instagram.com/nes_vending?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
 							<FontAwesomeIcon icon={faInstagram} size="2x" />
 						</a>
