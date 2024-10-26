@@ -35,7 +35,7 @@ export default function ServicesSection() {
 
 	return (
 		<section id="aboutUs" className="sm:pt-[126px] pt-[64px] w-screen h-auto bg-[#1E3E62] p-10">
-			<h1 className="text-5xl text-center m-0 p-5 text-white font-bold font-nuni mb-10">
+			<h1 className="text-5xl text-center m-0 p-5 text-white font-bold  mb-10">
 				Нашите услуги
 			</h1>
 			<div className="flex flex-col gap-y-5 items-center justify-center text-black w-full">
@@ -54,7 +54,7 @@ export default function ServicesSection() {
 					>
 						<h2
 							className={cn(
-								"font-bold px-5 h-auto font-nuni transition-all duration-300",
+								"font-bold px-5 h-auto  transition-all duration-300",
 								{
 									"text-2xl sm:text-5xl text-black mb-5 sm:mb-20":
 										activeBlock === block.id, 
@@ -67,7 +67,7 @@ export default function ServicesSection() {
 						{activeBlock === block.id && (
 							<div className="px-5">
 								<p
-									className="mb-4 font-nuni text-sm sm:text-xl w-[100%] sm:w-full"
+									className="mb-4  text-sm sm:text-xl w-[100%] sm:w-full"
 									style={{
 										opacity: 0,
 										transform: index > 0 ? "translateY(-150px)" : "translateY(150px)",

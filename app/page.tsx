@@ -99,7 +99,7 @@ export default function Home() {
 						<ul className="menu menu-vertical">
 							<li>
 								<a
-									className="font-grotesk font-bold nav-link relative text-3xl text-[#183D66]"
+									className="font-bold nav-link relative text-3xl text-[#183D66]"
 									onClick={handleToggleMenu}
 									href="#aboutUs"
 								>
@@ -108,7 +108,7 @@ export default function Home() {
 							</li>
 							<li>
 								<a
-									className="font-grotesk font-bold nav-link relative text-3xl text-[#183D66]"
+									className="font-bold nav-link relative text-3xl text-[#183D66]"
 									onClick={handleToggleMenu}
 									href="#how"
 								>
@@ -117,7 +117,7 @@ export default function Home() {
 							</li>
 							<li>
 								<a
-									className="font-grotesk font-bold nav-link relative text-3xl text-[#183D66]"
+									className="font-bold nav-link relative text-3xl text-[#183D66]"
 									onClick={handleToggleMenu}
 									href="#ready"
 								>
@@ -157,7 +157,7 @@ export default function Home() {
 					<ul className="menu menu-horizontal px-1 hidden lg:flex">
 						<li>
 							<a
-								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
+								className="font-bold text-xl nav-link relative text-[#183D66]"
 								href="#aboutUs"
 							>
 								ЗА НАС
@@ -165,7 +165,7 @@ export default function Home() {
 						</li>
 						<li>
 							<a
-								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
+								className="font-bold text-xl nav-link relative text-[#183D66]"
 								href="#how"
 							>
 								КАК
@@ -173,7 +173,7 @@ export default function Home() {
 						</li>
 						<li>
 							<a
-								className="font-grotesk font-bold text-xl nav-link relative text-[#183D66]"
+								className="font-bold text-xl nav-link relative text-[#183D66]"
 								href="#ready"
 							>
 								СВЪРЖЕТЕ СЕ
@@ -205,7 +205,7 @@ export default function Home() {
 						data-aos="fade-up"
 						className="sm:w-auto w-full z-[2] flex flex-col gap-4 items-start text-[#183D66]"
 					>
-						<p className="text-md sm:text-xl uppercase font-nuni">
+						<p className="text-md sm:text-xl uppercase ">
 							Вашето удоволствие <br />
 							на едно копче разстояниe
 						</p>
@@ -215,13 +215,13 @@ export default function Home() {
 							</p>
 							<p>Vending</p>
 						</h1>
-						<p className="text-sm sm:text-md font-nuni italic text-wrap w-full">
+						<p className="text-sm sm:text-md  italic text-wrap w-full">
 							{" "}
 							Перфектни за офиси, училища и обществени пространства, <br /> NES
 							Vending съчетава съвременна технология с надеждност.
 						</p>
 						<a href="#ready">
-							<button className="uppercase font-nuni text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
+							<button className="uppercase  text-lg font-bold button-effect overflow-hidden px-5 hover:text-white relative rounded-lg py-2 bg-transparent border-[#183D66] border-4 text-[#183D66] w-full sm:w-auto">
 								Свържи се
 							</button>
 						</a>
@@ -266,7 +266,7 @@ export default function Home() {
 							className="flex flex-row items-center gap-2"
 						>
 							<FontAwesomeIcon icon={faPhone} size="2x" />
-							<p className="font-nuni font-bold text-xl ml-5">087 777 9576</p>
+							<p className=" font-bold text-xl ml-5">087 777 9576</p>
 						</a>
 					</div>
 				</nav>

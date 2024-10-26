@@ -48,7 +48,7 @@ const SwitchButton = ({ isChecked }: { isChecked: any }) => {
 const SwitchLabel = ({ isChecked }: { isChecked: any }) => {
   return (
     <label
-      className='font-bold font-nuni'
+      className='font-bold'
       style={{
         position: 'absolute',
         top: '50%',
