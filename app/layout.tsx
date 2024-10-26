@@ -7,6 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "НЕС ВЕНДИНГ",
   description: "Вашето удоволствие на едно копче разстояние",
+  keywords: "nesvending, nes vending, vendingnes, vending burgas, nesvending bulgaria, nesvendin",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
